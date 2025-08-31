@@ -410,6 +410,38 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiShabdaShabda extends Struct.CollectionTypeSchema {
+  collectionName: 'shabdas';
+  info: {
+    displayName: 'Shabda';
+    pluralName: 'shabdas';
+    singularName: 'shabda';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    declensions: Schema.Attribute.Component<'sanskrit.declension', true>;
+    is_published: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shabda.shabda'
+    > &
+      Schema.Attribute.Private;
+    order_index: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTestingTableTestingTable
   extends Struct.CollectionTypeSchema {
   collectionName: 'testing_tables';
@@ -949,6 +981,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::shabda.shabda': ApiShabdaShabda;
       'api::testing-table.testing-table': ApiTestingTableTestingTable;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

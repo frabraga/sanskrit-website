@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shabdas",
+  "info": {
+    "singularName": "shabda",
+    "pluralName": "shabdas",
+    "displayName": "Shabda"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "order_index": {
+      "type": "integer"
+    },
+    "is_published": {
+      "type": "boolean"
+    },
+    "declensions": {
+      "type": "component",
+      "component": "sanskrit.declension",
+      "repeatable": true
+    }
+  }
+}

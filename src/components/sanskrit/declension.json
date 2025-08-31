@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sanskrit_declensions",
+  "info": {
+    "displayName": "declension",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "case_label": {
+      "type": "string"
+    },
+    "singular": {
+      "type": "string"
+    },
+    "dual": {
+      "type": "string"
+    },
+    "plural": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
