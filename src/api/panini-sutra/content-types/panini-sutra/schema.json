@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "panini_sutras",
+  "info": {
+    "singularName": "panini-sutra",
+    "pluralName": "panini-sutras",
+    "displayName": "Panini Sutras"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "sanskrit_text": {
+      "type": "string"
+    },
+    "sanskrit_explanation": {
+      "type": "string"
+    },
+    "portuguese_translation": {
+      "type": "string"
+    },
+    "chapter": {
+      "type": "integer"
+    }
+  }
+}

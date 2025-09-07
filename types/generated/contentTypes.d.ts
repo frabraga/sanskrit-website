@@ -410,6 +410,69 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPaniniSutraPaniniSutra extends Struct.CollectionTypeSchema {
+  collectionName: 'panini_sutras';
+  info: {
+    displayName: 'Panini Sutras';
+    pluralName: 'panini-sutras';
+    singularName: 'panini-sutra';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    chapter: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::panini-sutra.panini-sutra'
+    > &
+      Schema.Attribute.Private;
+    number: Schema.Attribute.String;
+    portuguese_translation: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    sanskrit_explanation: Schema.Attribute.String;
+    sanskrit_text: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPratisakhyaSutraPratisakhyaSutra
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'pratisakhya_sutras';
+  info: {
+    displayName: 'Pratisakhya Sutra';
+    pluralName: 'pratisakhya-sutras';
+    singularName: 'pratisakhya-sutra';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pratisakhya-sutra.pratisakhya-sutra'
+    > &
+      Schema.Attribute.Private;
+    number: Schema.Attribute.String;
+    portuguese_translation: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    sanskrit_text: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiShabdaShabda extends Struct.CollectionTypeSchema {
   collectionName: 'shabdas';
   info: {
@@ -436,35 +499,6 @@ export interface ApiShabdaShabda extends Struct.CollectionTypeSchema {
     order_index: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiTestingTableTestingTable
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'testing_tables';
-  info: {
-    displayName: 'Testing Table';
-    pluralName: 'testing-tables';
-    singularName: 'testing-table';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    is_working: Schema.Attribute.Boolean;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::testing-table.testing-table'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -981,8 +1015,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::panini-sutra.panini-sutra': ApiPaniniSutraPaniniSutra;
+      'api::pratisakhya-sutra.pratisakhya-sutra': ApiPratisakhyaSutraPratisakhyaSutra;
       'api::shabda.shabda': ApiShabdaShabda;
-      'api::testing-table.testing-table': ApiTestingTableTestingTable;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

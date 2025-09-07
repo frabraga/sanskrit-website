@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pratisakhya_sutras",
+  "info": {
+    "singularName": "pratisakhya-sutra",
+    "pluralName": "pratisakhya-sutras",
+    "displayName": "Pratisakhya Sutra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "sanskrit_text": {
+      "type": "string"
+    },
+    "portuguese_translation": {
+      "type": "string"
+    }
+  }
+}
