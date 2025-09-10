@@ -20,6 +20,9 @@
     "order_index": {
       "type": "integer"
     },
+    "prakarana_label": {
+      "type": "string"
+    },
     "is_published": {
       "type": "boolean"
     },

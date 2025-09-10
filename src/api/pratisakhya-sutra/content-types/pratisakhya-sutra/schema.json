@@ -14,11 +14,29 @@
     "number": {
       "type": "string"
     },
-    "sanskrit_text": {
+    "sutra_text": {
       "type": "string"
     },
     "portuguese_translation": {
       "type": "string"
+    },
+    "chapter_heading": {
+      "type": "string"
+    },
+    "bhashya": {
+      "type": "string"
+    },
+    "verse_explanation_pt": {
+      "type": "string"
+    },
+    "bhashya_translation_pt": {
+      "type": "string"
+    },
+    "example": {
+      "type": "string"
+    },
+    "is_published": {
+      "type": "boolean"
     }
   }
 }

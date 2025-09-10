@@ -421,10 +421,13 @@ export interface ApiPaniniSutraPaniniSutra extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    chapter: Schema.Attribute.Integer;
+    anuvrtti: Schema.Attribute.String;
+    chapter_heading: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    example: Schema.Attribute.String;
+    is_published: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -432,13 +435,16 @@ export interface ApiPaniniSutraPaniniSutra extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     number: Schema.Attribute.String;
+    pada_heading: Schema.Attribute.String;
+    padaccheda: Schema.Attribute.String;
     portuguese_translation: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sanskrit_explanation: Schema.Attribute.String;
-    sanskrit_text: Schema.Attribute.String;
+    sutra_text: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    vrtti: Schema.Attribute.String;
   };
 }
 
@@ -454,9 +460,14 @@ export interface ApiPratisakhyaSutraPratisakhyaSutra
     draftAndPublish: true;
   };
   attributes: {
+    bhashya: Schema.Attribute.String;
+    bhashya_translation_pt: Schema.Attribute.String;
+    chapter_heading: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    example: Schema.Attribute.String;
+    is_published: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -466,10 +477,11 @@ export interface ApiPratisakhyaSutraPratisakhyaSutra
     number: Schema.Attribute.String;
     portuguese_translation: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    sanskrit_text: Schema.Attribute.String;
+    sutra_text: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    verse_explanation_pt: Schema.Attribute.String;
   };
 }
 
@@ -497,6 +509,7 @@ export interface ApiShabdaShabda extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     order_index: Schema.Attribute.Integer;
+    prakarana_label: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

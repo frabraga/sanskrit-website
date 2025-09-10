@@ -14,7 +14,7 @@
     "number": {
       "type": "string"
     },
-    "sanskrit_text": {
+    "sutra_text": {
       "type": "string"
     },
     "sanskrit_explanation": {
@@ -23,8 +23,26 @@
     "portuguese_translation": {
       "type": "string"
     },
-    "chapter": {
-      "type": "integer"
+    "chapter_heading": {
+      "type": "string"
+    },
+    "pada_heading": {
+      "type": "string"
+    },
+    "padaccheda": {
+      "type": "string"
+    },
+    "anuvrtti": {
+      "type": "string"
+    },
+    "vrtti": {
+      "type": "string"
+    },
+    "example": {
+      "type": "string"
+    },
+    "is_published": {
+      "type": "boolean"
     }
   }
 }
