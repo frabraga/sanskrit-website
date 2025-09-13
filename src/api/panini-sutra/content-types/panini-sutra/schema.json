@@ -17,6 +17,9 @@
     "sutra_text": {
       "type": "string"
     },
+    "order_index": {
+      "type": "integer"
+    },
     "sanskrit_explanation": {
       "type": "string"
     },
@@ -40,9 +43,6 @@
     },
     "example": {
       "type": "string"
-    },
-    "order_index": {
-      "type": "integer"
     },
     "is_published": {
       "type": "boolean"
