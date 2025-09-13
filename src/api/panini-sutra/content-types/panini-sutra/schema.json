@@ -41,6 +41,9 @@
     "example": {
       "type": "string"
     },
+    "order_index": {
+      "type": "integer"
+    },
     "is_published": {
       "type": "boolean"
     }

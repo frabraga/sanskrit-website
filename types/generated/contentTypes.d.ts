@@ -435,6 +435,7 @@ export interface ApiPaniniSutraPaniniSutra extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     number: Schema.Attribute.String;
+    order_index: Schema.Attribute.Integer;
     pada_heading: Schema.Attribute.String;
     padaccheda: Schema.Attribute.String;
     portuguese_translation: Schema.Attribute.String;
@@ -475,6 +476,7 @@ export interface ApiPratisakhyaSutraPratisakhyaSutra
     > &
       Schema.Attribute.Private;
     number: Schema.Attribute.String;
+    order_index: Schema.Attribute.Integer;
     portuguese_translation: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sutra_text: Schema.Attribute.String;
