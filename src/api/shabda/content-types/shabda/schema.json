@@ -26,6 +26,14 @@
     "is_published": {
       "type": "boolean"
     },
+    "audio": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "audios"
+      ]
+    },
     "declensions": {
       "type": "component",
       "component": "sanskrit.declension",

@@ -498,6 +498,7 @@ export interface ApiShabdaShabda extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    audio: Schema.Attribute.Media<'files' | 'audios'>;
     category: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
