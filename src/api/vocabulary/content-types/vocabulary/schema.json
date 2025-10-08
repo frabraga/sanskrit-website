@@ -1,0 +1,103 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vocabularies",
+  "info": {
+    "singularName": "vocabulary",
+    "pluralName": "vocabularies",
+    "displayName": "Vocabulary"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "word_type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "verb",
+        "substantive",
+        "indeclinable"
+      ]
+    },
+    "word_devanagari": {
+      "type": "string",
+      "required": true
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": true
+    },
+    "itrans": {
+      "type": "string"
+    },
+    "iast": {
+      "type": "string"
+    },
+    "harvard_kyoto": {
+      "type": "string"
+    },
+    "meaning_pt": {
+      "type": "string"
+    },
+    "meaning_es": {
+      "type": "string"
+    },
+    "meaning_en": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "masculine",
+        "feminine",
+        "neuter"
+      ]
+    },
+    "grammatical_case": {
+      "type": "string"
+    },
+    "root_devanagari": {
+      "type": "string"
+    },
+    "voice": {
+      "type": "enumeration",
+      "enum": [
+        "parasmaipada",
+        "atmanepada",
+        "ubhayapada"
+      ]
+    },
+    "verb_class": {
+      "type": "integer"
+    },
+    "standard_form": {
+      "type": "string"
+    },
+    "past_imperfect": {
+      "type": "string"
+    },
+    "potential": {
+      "type": "string"
+    },
+    "imperative": {
+      "type": "string"
+    },
+    "past_participle": {
+      "type": "string"
+    },
+    "gerund": {
+      "type": "string"
+    },
+    "infinitive": {
+      "type": "string"
+    },
+    "ppp": {
+      "type": "string"
+    },
+    "order_index": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

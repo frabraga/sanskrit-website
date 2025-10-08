@@ -240,6 +240,63 @@ export interface AdminRole extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface AdminSession extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_sessions';
+  info: {
+    description: 'Session Manager storage';
+    displayName: 'Session';
+    name: 'Session';
+    pluralName: 'sessions';
+    singularName: 'session';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+    i18n: {
+      localized: false;
+    };
+  };
+  attributes: {
+    absoluteExpiresAt: Schema.Attribute.DateTime & Schema.Attribute.Private;
+    childId: Schema.Attribute.String & Schema.Attribute.Private;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deviceId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    expiresAt: Schema.Attribute.DateTime &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::session'> &
+      Schema.Attribute.Private;
+    origin: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sessionId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private &
+      Schema.Attribute.Unique;
+    status: Schema.Attribute.String & Schema.Attribute.Private;
+    type: Schema.Attribute.String & Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface AdminTransferToken extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_transfer_tokens';
   info: {
@@ -518,6 +575,61 @@ export interface ApiShabdaShabda extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVocabularyVocabulary extends Struct.CollectionTypeSchema {
+  collectionName: 'vocabularies';
+  info: {
+    displayName: 'Vocabulary';
+    pluralName: 'vocabularies';
+    singularName: 'vocabulary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gender: Schema.Attribute.Enumeration<['masculine', 'feminine', 'neuter']>;
+    gerund: Schema.Attribute.String;
+    grammatical_case: Schema.Attribute.String;
+    harvard_kyoto: Schema.Attribute.String;
+    iast: Schema.Attribute.String;
+    imperative: Schema.Attribute.String;
+    infinitive: Schema.Attribute.String;
+    is_published: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    itrans: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vocabulary.vocabulary'
+    > &
+      Schema.Attribute.Private;
+    meaning_en: Schema.Attribute.String;
+    meaning_es: Schema.Attribute.String;
+    meaning_pt: Schema.Attribute.String;
+    order_index: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    past_imperfect: Schema.Attribute.String;
+    past_participle: Schema.Attribute.String;
+    potential: Schema.Attribute.String;
+    ppp: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    root_devanagari: Schema.Attribute.String;
+    standard_form: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    verb_class: Schema.Attribute.Integer;
+    voice: Schema.Attribute.Enumeration<
+      ['parasmaipada', 'atmanepada', 'ubhayapada']
+    >;
+    word_devanagari: Schema.Attribute.String & Schema.Attribute.Required;
+    word_type: Schema.Attribute.Enumeration<
+      ['verb', 'substantive', 'indeclinable']
+    > &
+      Schema.Attribute.Required;
   };
 }
 
@@ -1028,12 +1140,14 @@ declare module '@strapi/strapi' {
       'admin::audit-log': AdminAuditLog;
       'admin::permission': AdminPermission;
       'admin::role': AdminRole;
+      'admin::session': AdminSession;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::panini-sutra.panini-sutra': ApiPaniniSutraPaniniSutra;
       'api::pratisakhya-sutra.pratisakhya-sutra': ApiPratisakhyaSutraPratisakhyaSutra;
       'api::shabda.shabda': ApiShabdaShabda;
+      'api::vocabulary.vocabulary': ApiVocabularyVocabulary;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
