@@ -20,6 +20,14 @@
         "indeclinable"
       ]
     },
+    "word_subtype": {
+      "type": "enumeration",
+      "enum": [
+        "noun",
+        "adjective",
+        "pronoun"
+      ]
+    },
     "word_devanagari": {
       "type": "string",
       "required": true

@@ -626,6 +626,9 @@ export interface ApiVocabularyVocabulary extends Struct.CollectionTypeSchema {
       ['parasmaipada', 'atmanepada', 'ubhayapada']
     >;
     word_devanagari: Schema.Attribute.String & Schema.Attribute.Required;
+    word_subtype: Schema.Attribute.Enumeration<
+      ['noun', 'adjective', 'pronoun']
+    >;
     word_type: Schema.Attribute.Enumeration<
       ['verb', 'substantive', 'indeclinable']
     > &
