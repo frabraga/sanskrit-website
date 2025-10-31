@@ -37,7 +37,7 @@ $RECYCLE.BIN/
 ############################
 
 *.7z
-*.csv
+# *.csv  # Commented out - we need CSV files for vocabulary import
 *.dat
 *.dmg
 *.gz
