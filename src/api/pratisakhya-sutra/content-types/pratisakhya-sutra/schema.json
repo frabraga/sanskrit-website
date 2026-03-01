@@ -21,7 +21,7 @@
       "type": "string"
     },
     "portuguese_translation": {
-      "type": "string"
+      "type": "text"
     },
     "chapter_heading": {
       "type": "string"
