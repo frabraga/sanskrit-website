@@ -162,8 +162,10 @@ module.exports = {
       console.log(`  ✓ Deleted ${existingEntries.length} existing entries\n`);
 
       // Path to the CSV file
-      const filePath =
-        "/Users/chico/Downloads/Copy of Shabda Manjari Strapi - Substantivos (1).csv";
+      const filePath = path.join(
+        __dirname,
+        "../../scripts/Copy of Shabda Manjari Strapi - Substantivos (1).csv",
+      );
 
       try {
         console.log("📖 Reading CSV file...");
