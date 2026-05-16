@@ -16,9 +16,9 @@
     "convert:csv": "node scripts/convert-csv-for-plugin.js"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.37.1",
-    "@strapi/plugin-users-permissions": "5.37.1",
-    "@strapi/strapi": "5.37.1",
+    "@strapi/plugin-cloud": "5.46.0",
+    "@strapi/plugin-users-permissions": "5.46.0",
+    "@strapi/strapi": "5.46.0",
     "better-sqlite3": "^12.6.2",
     "pg": "8.8.0",
     "react": "^18.0.0",
